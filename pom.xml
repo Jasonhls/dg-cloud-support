@@ -20,6 +20,7 @@
     <modules>
         <module>dg-eureka</module>
         <module>dg-spring-boot-admin</module>
+        <module>dg-spring-config</module>
     </modules>
 
     <properties>

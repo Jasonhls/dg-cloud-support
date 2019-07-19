@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: dg-spring-config
+  profiles:
+    active: local

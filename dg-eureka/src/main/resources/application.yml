@@ -1,8 +1,11 @@
 spring:
   application:
-    name: Eureka.G.SR2
+    name: dg-eureka
   profiles:
     active: local
   cloud:
     config:
-      enabled: false
+      enabled: true
+      label: develop
+      profile: local
+      uri: http://localhost:8888/
