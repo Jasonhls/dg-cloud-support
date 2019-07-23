@@ -9,7 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.dg.mall</groupId>
     <artifactId>dg-spring-config</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>dg-spring-config</name>
+    <description>spring cloud config</description>
 
     <properties>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
