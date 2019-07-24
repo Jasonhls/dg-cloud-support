@@ -10,3 +10,5 @@ spring:
       discovery:
         enabled: true
         service-id: dg-spring-config
+server:
+  port: 9000
