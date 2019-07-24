@@ -3,11 +3,13 @@ spring:
     name: dg-eureka
   profiles:
     active: local
+
+  # 初期先使用用本地配置文件，稳定以后采用 config
   cloud:
     config:
-      enabled: true
+      enabled: false
       label: develop
-      profile: local
+      profile: dev
       uri: http://192.168.11.159:8888/
 server:
   port: 8761

@@ -1,0 +1,29 @@
+eureka:
+  server:
+    # 是否开启自我保护（正式环境需要开启）
+    enable-self-preservation: false
+    # 3秒自动剔除失效节点
+    eviction-interval-timer-in-ms: 3000
+    # eureka service 刷新 readCacheMap 时间
+    response-cache-update-interval-ms: 3000
+  client:
+    #注册自己
+    register-with-eureka: false
+    # 是否需要从其他eureka 获取注册表信息
+    fetch-registry: false
+    service-url:
+      defaultZone: http://192.168.11.159:8761/eureka/
+
+  instance:
+    hostname: 192.168.11.159
+    prefer-ip-address: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
