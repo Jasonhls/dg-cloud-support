@@ -7,6 +7,8 @@ eureka:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/
 
+
+
 management:
   endpoints:
     web:
@@ -15,3 +17,8 @@ management:
   endpoint:
     health:
       show-details: always
+spring:
+  security:
+    user:
+      name: "admin"
+      password: "admin"
