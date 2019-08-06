@@ -29,11 +29,3 @@ eureka:
   instance:
     hostname: 127.0.0.1
     prefer-ip-address: true
-    metadata-map:
-      management:
-        context-path: ${server.servlet.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}
-    statusPageUrlPath: ${server.servlet.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}${endpoints.info.path:/swagger-ui.html}
-    healthCheckUrlPath: ${server.servlet.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}${endpoints.health.path:/health}
-    management:
-      port: ${management.port:${MANAGEMENT_PORT:${server.port:${SERVER_PORT:9000}}}}
-    lease-expiration-duration-in-seconds: 90
