@@ -1,3 +1,15 @@
+server:
+  port: 8761
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
 eureka:
   server:
     # 是否开启自我保护（正式环境需要开启）
@@ -12,20 +24,16 @@ eureka:
     # 是否需要从其他eureka 获取注册表信息
     fetch-registry: false
     service-url:
-      defaultZone: http://192.168.11.159:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
 
   instance:
     hostname: 127.0.0.1
     prefer-ip-address: true
+    metadata-map:
+      management:
+        context-path: ${server.servlet.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}
     statusPageUrlPath: ${server.servlet.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}${endpoints.info.path:/swagger-ui.html}
-
-
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
+    healthCheckUrlPath: ${server.servlet.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}${endpoints.health.path:/health}
+    management:
+      port: ${management.port:${MANAGEMENT_PORT:${server.port:${SERVER_PORT:9000}}}}
+    lease-expiration-duration-in-seconds: 90
