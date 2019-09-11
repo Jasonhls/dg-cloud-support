@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Jasonhls/dg-config-repo.git
+          search-paths: /**  # 指定搜索路径，如果有多个路径则使用,分隔
+          username: Jasonhls
+          password: 13367258287hls
+  rabbitmq:
+    host: 192.168.11.159
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
