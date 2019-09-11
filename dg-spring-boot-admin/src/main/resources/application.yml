@@ -1,17 +1,18 @@
+server:
+  port: 9000
 spring:
   application:
     name: dg-spring-boot-admin
-  profiles:
-    active: local
     # 初期先使用用本地配置文件，稳定以后采用 config
   cloud:
     config:
-      enabled: false
-      profile: dev
+      profile: test
       label: develop
+      name: dg-spring-boot-admin
       discovery:
-        enabled: false
         service-id: dg-spring-config
-
-server:
-  port: 9000
+  rabbitmq:
+    host: 192.168.11.159
+    port: 5672
+    username: guest
+    password: guest

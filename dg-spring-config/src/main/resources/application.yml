@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: dg-spring-config
-  profiles:
-    active: local
-server:
-  port: 8888
